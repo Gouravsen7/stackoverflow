@@ -1,0 +1,9 @@
+= form_for @question do |f|
+  .form-group
+    = f.label :user
+    | :
+    | #{current_user.name.capitalize}
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control'
+  = f.submit "Submit", class: 'btn btn-primary'

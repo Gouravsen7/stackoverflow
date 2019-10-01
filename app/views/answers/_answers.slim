@@ -1,0 +1,8 @@
+.list-group
+  - @answers.includes(:user).each do |ans|
+    .list-group-item id="row_#{ans.id}" 
+      p= ans.description
+      p style=("float: right;") 
+        | By: #{ans.user.name}
+      = link_to "Delete" , ans, confirm: 'Are you sure?', method: :delete, remote: true
+      br/

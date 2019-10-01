@@ -1,0 +1,13 @@
+| Question ID:
+span#question-id= @question.id
+h2
+  = @question.description
+  br/
+  h4 Answers:
+  br/
+  = render partial: "answers/answers"
+  - if user_signed_in?
+    .form-group
+      h4 Description:
+      = text_area_tag 'description', nil, rows: 10, cols: 25, class: 'form-control', placeholder: "Post your answer", id: "answer-description"
+    = link_to "Submit", "javascript:;", class: 'btn btn-primary', id: "submit-answer"

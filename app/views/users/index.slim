@@ -1,0 +1,14 @@
+h2 Users
+table.table.table-hover
+  thead
+    tr
+      th Name
+      th Email
+      th Actions
+  tbody
+    - @users.each do |user|
+      tr
+        td= user.name
+        td= user.email
+        td
+          = link_to "Summary", summary_user_path(user), class: 'btn btn-primary'
